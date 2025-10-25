@@ -1,92 +1,114 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>參與社群 - DevFest Kaohsiung 2025</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* 請完整貼上您的 CSS（與原始版本完全一致） */
-        :root { /* ...變數省略...*/ }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-family); background-color: var(--color-bg-light); color: var(--color-text-primary); line-height: 1.6; overflow-x: hidden; }
-        /* ...以下 style 請直接沿用您的完整版 ... */
-        /* ...為節省空間這裡省略，請複製您用的原 style 區塊 ... */
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>參與社群 - DevFest Kaohsiung 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c1: #2d4a54;
+      --c2: #b4c900;
+      --bg1: #f5f5f5;
+      --bg2: #fff;
+      --grad: linear-gradient(135deg,#2d4a54 0,#1a2d36 100%);
+      --text: #202124;
+      --muted: #5f6368;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0,0,0,.12);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Noto Sans TC',sans-serif;background:var(--bg1);color:var(--text);line-height:1.7}
+    .header{background:var(--grad);color:#fff;text-align:center;padding:64px 16px;position:relative;overflow:hidden}
+    .header::before{content:'';position:absolute;inset:0;background:url('image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><text x="10" y="40" font-size="14" fill="white" opacity="0.05">🔒</text></svg>');opacity:.2;animation:float 20s linear infinite}
+    @keyframes float{0%{background-position:0 0}100%{background-position:100px 100px}}
+    .container{max-width:1200px;margin:auto;padding:48px 16px}
+    .stats{display:grid;gap:24px;text-align:center;background:var(--bg2);padding:48px;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:48px}
+    .stat strong{font-size:2.2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .category{margin-bottom:72px}
+    .category h3{border-left:4px solid var(--c2);padding-left:8px;color:var(--c1);margin-bottom:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+    .card{background:var(--bg2);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;transition:.3s;position:relative;overflow:hidden}
+    .card:hover{transform:translateY(-6px)}
+    .card::after{content:'🔐';position:absolute;top:12px;right:12px;opacity:0;transition:.3s}
+    .card:hover::after{opacity:.3}
+    .logo{height:160px;display:flex;align-items:center;justify-content:center;background:var(--bg1);border-radius:var(--radius);margin-bottom:16px}
+    .logo img{max-width:80%;max-height:130px;object-fit:contain}
+    .name{font-weight:700;margin-bottom:8px}
+    .desc{color:var(--muted);font-size:.95rem;margin-bottom:12px}
+    .links a{display:inline-block;margin-right:8px;padding:4px 10px;background:var(--bg1);border-radius:20px;font-size:.85rem;text-decoration:none;color:var(--muted)}
+    .links a:hover{background:var(--c1);color:#fff}
+    footer{text-align:center;color:#fff;background:#202124;padding:24px;margin-top:64px}
+    @media(max-width:640px){.stats{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <h1>參與社群</h1>
-            <p>南臺灣技術社群齊聚一堂，共同打造科技盛會</p>
-        </div>
-    </header>
-    <main class="container">
-        <section class="stats-section fade-in-up">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" id="communityCount">15+</div>
-                    <div class="stat-label">參與社群</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">社群成員</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">專業講者</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">組織類別</div>
-                </div>
-            </div>
-        </section>
-        <section class="section-title fade-in-up">
-            <h2>社群夥伴</h2>
-            <p>感謝以下社群組織的支持與參與，共同推動南臺灣科技發展</p>
-        </section>
-        <section class="category-section fade-in-up">
-            <div class="category-header">
-                <h3 class="category-title">🏛️ 政府組織</h3>
-                <p class="category-description">政府機關與公部門單位</p>
-            </div>
-            <div class="community-grid" id="governmentGrid"><div class="loading">載入中</div></div>
-        </section>
-        <section class="category-section fade-in-up">
-            <div class="category-header">
-                <h3 class="category-title">🌐 國際非營利資安組織</h3>
-                <p class="category-description">國際資訊安全社群與非營利組織</p>
-            </div>
-            <div class="community-grid" id="internationalGrid"><div class="loading">載入中</div></div>
-        </section>
-        <section class="category-section fade-in-up">
-            <div class="category-header">
-                <h3 class="category-title">🎓 教育組織</h3>
-                <p class="category-description">資安教育與培訓平台</p>
-            </div>
-            <div class="community-grid" id="educationGrid"><div class="loading">載入中</div></div>
-        </section>
-        <section class="category-section fade-in-up">
-            <div class="category-header">
-                <h3 class="category-title">🔐 台灣資安社群</h3>
-                <p class="category-description">台灣本土資訊安全與科技社群</p>
-            </div>
-            <div class="community-grid" id="securityGrid"><div class="loading">載入中</div></div>
-        </section>
-        <section class="cta-section fade-in-up">
-            <h2>想要加入我們？</h2>
-            <p>歡迎更多社群夥伴加入 DevFest Kaohsiung，一起創造更精彩的活動</p>
-            <a href="#contact" class="cta-button">聯絡我們</a>
-        </section>
-    </main>
-    <footer class="footer">
-        <p>© 2025 DevFest Kaohsiung. All rights reserved.</p>
-    </footer>
-    <!-- 關鍵只掛載這一行 -->
-    <script src="./main.js"></script>
+  <header class="header">
+    <h1>參與社群</h1>
+    <p>南臺灣技術社群齊聚一堂，共同打造科技盛會</p>
+  </header>
+
+  <main class="container">
+    <section class="stats">
+      <div><strong id="count">15+</strong><div>參與社群</div></div>
+      <div><strong>500+</strong><div>社群成員</div></div>
+      <div><strong>20+</strong><div>專業講者</div></div>
+      <div><strong>4</strong><div>組織類別</div></div>
+    </section>
+
+    <section class="category"><h3>🏛️ 政府組織</h3><div class="grid" id="gov"></div></section>
+    <section class="category"><h3>🌐 國際非營利資安組織</h3><div class="grid" id="intl"></div></section>
+    <section class="category"><h3>🎓 教育組織</h3><div class="grid" id="edu"></div></section>
+    <section class="category"><h3>🔐 台灣資安社群</h3><div class="grid" id="sec"></div></section>
+  </main>
+
+  <footer>© 2025 DevFest Kaohsiung. All rights reserved.</footer>
+
+  <script>
+  const img=p=>`./imges/${p}.png`;
+  const data={
+    gov:[{n:'ACW SOUTH 數位產業署沙崙資安服務基地',d:'提供資安創新與服務推廣。',i:'acw-south'}],
+    intl:[
+      {n:'Cloud Security Alliance (CSA) Taiwan Chapter',d:'推廣雲端安全最佳實踐。',i:'csa'},
+      {n:'Open Web Application Security Project (OWASP) Taiwan Chapter',d:'推廣應用程式安全知識與教育訓練。',i:'owasp'},
+      {n:'The Honeynet Project Taiwan Chapter',d:'進行蜜罐研究與資安攻防演練。',i:'honeynet'}
+    ],
+    edu:[{n:'Hack The Box',d:'資安學習與實戰平台。',i:'hackthebox'}],
+    sec:[
+      {n:'Agile HR',d:'推廣敏捷人資理念。',i:'agile-hr'},
+      {n:'AWS User Group Taiwan',d:'AWS 技術應用社群。',i:'aws-ug'},
+      {n:'DevSecOps Taiwan',d:'推動 Dev+Sec+Ops 文化。',i:'devsecops'},
+      {n:'GDG Kaohsiung',d:'Google 技術社群。',i:'gdg-kaohsiung'},
+      {n:'Taiwan Agile Tribe (TAT) 台灣敏捷部落',d:'敏捷開發與實踐分享。',i:'tat'},
+      {n:'TWCSA 台灣數位安全聯盟',d:'資安產學合作與推廣。',i:'twcsa'},
+      {n:'OCF 開放文化基金會',d:'推廣開源與數位人權。',i:'ocf'},
+      {n:'vLAB Online 台灣路由網路實驗中心',d:'推動網路安全教育。',i:'vlab'},
+      {n:'SmartEraNewLife',d:'AI × 資安玩家村。',i:'smartera'},
+      {n:'網通人（專管網路通不通）',d:'專注網路通訊與架構。',i:'netman'}
+    ]
+  };
+  function render(list,id){
+    const el=document.getElementById(id);
+    el.innerHTML='';
+    list.forEach(o=>{
+      el.innerHTML+=`
+      <div class='card'>
+        <div class='logo'><img loading="lazy" src='${img(o.i)}' alt='${o.n}' onerror="this.src='./imges/placeholder.png'"></div>
+        <div class='name'>${o.n}</div>
+        <div class='desc'>${o.d}</div>
+        <div class='links'><a href="#" target="_blank">官網</a></div>
+      </div>`;
+    });
+  }
+  document.addEventListener('DOMContentLoaded',()=>{
+    render(data.gov,'gov');
+    render(data.intl,'intl');
+    render(data.edu,'edu');
+    render(data.sec,'sec');
+    document.getElementById('count').textContent=(data.gov.length+data.intl.length+data.edu.length+data.sec.length)+'+';
+  });
+  </script>
 </body>
 </html>
