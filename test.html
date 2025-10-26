@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>參與社群 - 資安社群嘉年華 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #223744;
+  --c2: #b6c83a;
+  --bg1: #f7f8fa;
+  --bg2: #ffffff;
+  --grad: linear-gradient(135deg, #223744 0%, #b6c83a 100%);
+  --text: #202124;
+  --muted: #5f6368;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: var(--bg1);
+  color: var(--text);
+  line-height: 1.7;
+}
+.header {
+  background: var(--grad);
+  color: #fff;
+  text-align: center;
+  padding: 64px 16px;
+}
+.header h1 { font-size: 2.4rem; margin-bottom: 8px; }
+.header p { opacity: .92; }
+.container { max-width: 1200px; margin: auto; padding: 48px 16px; }
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4,1fr); align-items: stretch; text-align: center;
+  margin-bottom: 48px; background: var(--bg2); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.stat-item { padding: 36px 8px; }
+.stat-number {
+  font-size: 2.1rem;
+  font-weight: 700;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label { color: var(--muted); font-size: 1.07rem; margin-top: 8px; }
+
+.category { margin-bottom:56px; }
+.category h3 {
+  border-left:4px solid var(--c2);
+  padding-left:8px;
+  color:var(--c1);
+  margin:32px 0 16px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:24px;
+}
+.card {
+  background:var(--bg2);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:24px;
+  transition:.3s;
+  text-align:center;
+}
+.card:hover { transform:translateY(-5px); }
+.logo {
+  height:120px; display:flex; align-items:center; justify-content:center; background:var(--bg1);
+  border-radius:var(--radius); margin-bottom:16px;
+}
+.logo img { max-width:80%; max-height:100px; object-fit:contain; }
+.name { font-weight:700; margin-bottom:8px; }
+.desc { color:var(--muted); font-size:.98rem; margin-bottom:12px; }
+.links a {
+  display:inline-block; margin-right:8px; padding:4px 10px;
+  background:var(--bg1);
+  border-radius:20px; font-size:.9rem;
+  text-decoration:none; color:var(--muted);
+}
+.links a:hover {
+  background:var(--c1); color:#fff;
+}
+footer {
+  text-align:center; color:#fff; background:#223744;
+  padding:18px 4px; margin-top:64px;
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <h1>參與社群</h1>
+  <p>全台資安社群齊聚台南沙崙基地，共同打造資安嘉年華</p>
+</header>
+
+<main class="container">
+  <section class="stats-grid">
+    <div class="stat-item"><div class="stat-number" id="communityCount">14+</div><div class="stat-label">參與社群</div></div>
+    <div class="stat-item"><div class="stat-number">10,000+</div><div class="stat-label">動員社群人數</div></div>
+    <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">社群推廣手</div></div>
+    <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">活動主題區</div></div>
+  </section>
+
+  <section class="category"><h3>🏛️ 政府組織</h3><div class="grid" id="gov"></div></section>
+  <section class="category"><h3>🌐 國際非營利資安組織</h3><div class="grid" id="intl"></div></section>
+  <section class="category"><h3>🎓 教育組織</h3><div class="grid" id="edu"></div></section>
+  <section class="category"><h3>🔐 台灣資安社群</h3><div class="grid" id="sec"></div></section>
+</main>
+
+<footer>© 2025 資安社群嘉年華 ft. 數位產業署 MODA</footer>
+
+<script>
+const img = p => `./imges/${p}.png`;
+const data = {
+  gov:[{n:'ACW SOUTH 數位產業署沙崙資安服務基地',d:'提供資安創新與服務推廣。',i:'acw-south',link:'https://acw.gov.tw',fb:'https://facebook.com/acw',ig:'https://instagram.com/acw'}],
+  intl:[
+    {n:'Cloud Security Alliance (CSA) Taiwan Chapter',d:'推廣雲端安全最佳實踐。',i:'csa',link:'https://csa.tw'},
+    {n:'Open Web Application Security Project (OWASP) Taiwan Chapter',d:'推廣應用程式安全知識與教育訓練。',i:'owasp',link:'https://owasp.org'},
+    {n:'The Honeynet Project Taiwan Chapter',d:'進行蜜罐研究與資安攻防演練。',i:'honeynet',link:'https://honeynet.org'}
+  ],
+  edu:[{n:'Hack The Box',d:'資安學習與實戰平台。',i:'hackthebox',link:'https://www.hackthebox.com'}],
+  sec:[
+    {n:'Agile HR',d:'推廣敏捷人資理念。',i:'agile-hr'},
+    {n:'AWS User Group Taiwan',d:'AWS 技術應用社群。',i:'aws-ug',fb:'https://facebook.com/awsugtw'},
+    {n:'DevSecOps Taiwan',d:'推動 Dev+Sec+Ops 文化。',i:'devsecops'},
+    {n:'GDG Kaohsiung',d:'Google 技術社群。',i:'gdg-kaohsiung'},
+    {n:'Taiwan Agile Tribe (TAT) 台灣敏捷部落',d:'敏捷開發與實踐分享。',i:'tat'},
+    {n:'TWCSA 台灣數位安全聯盟',d:'資安產學合作與推廣。',i:'twcsa'},
+    {n:'OCF 開放文化基金會',d:'推廣開源與數位人權。',i:'ocf'},
+    {n:'vLAB Online 台灣路由網路實驗中心',d:'推動網路安全教育。',i:'vlab'},
+    {n:'SmartEraNewLife',d:'AI × 資安玩家村。',i:'smartera'},
+    {n:'網通人（專管網路通不通）',d:'專注網路通訊與架構。',i:'netman'}
+  ]
+};
+
+function render(list,id){
+  const el=document.getElementById(id);
+  el.innerHTML=list.map(o=>`
+  <div class='card'>
+    <div class='logo'>
+      <img loading="lazy" src='${img(o.i)}' alt='${o.n}' onerror="this.src='./imges/placeholder.png'">
+    </div>
+    <div class='name'>${o.n}</div>
+    <div class='desc'>${o.d}</div>
+    <div class='links'>
+      ${o.link ? `<a href="${o.link}" target="_blank" rel="noopener noreferrer">官網</a>` : ''}
+      ${o.fb ? `<a href="${o.fb}" target="_blank" rel="noopener noreferrer">FB</a>` : ''}
+      ${o.ig ? `<a href="${o.ig}" target="_blank" rel="noopener noreferrer">IG</a>` : ''}
+    </div>
+  </div>`).join('');
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  render(data.gov,'gov');
+  render(data.intl,'intl');
+  render(data.edu,'edu');
+  render(data.sec,'sec');
+  document.getElementById('communityCount').textContent=(data.gov.length+data.intl.length+data.edu.length+data.sec.length)+'+';
+});
+</script>
+</body>
+</html>
