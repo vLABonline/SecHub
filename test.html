@@ -117,24 +117,24 @@ footer {
 <script>
 const img = p => `./imges/${p}.png`;
 const data = {
-  gov:[{n:'ACW SOUTH 數位產業署沙崙資安服務基地',d:'提供資安創新與服務推廣。',i:'acw-south',link:'https://acw.gov.tw',fb:'https://facebook.com/acw',ig:'https://instagram.com/acw'}],
+  gov:[{n:'ACW SOUTH 數位產業署沙崙資安服務基地',d:'提供資安創新與服務推廣。',i:'acw-south',link:'https://www.acw.org.tw/ACWSouth/Default.aspx'}],
   intl:[
-    {n:'Cloud Security Alliance (CSA) Taiwan Chapter',d:'推廣雲端安全最佳實踐。',i:'csa',link:'https://csa.tw'},
-    {n:'Open Web Application Security Project (OWASP) Taiwan Chapter',d:'推廣應用程式安全知識與教育訓練。',i:'owasp',link:'https://owasp.org'},
-    {n:'The Honeynet Project Taiwan Chapter',d:'進行蜜罐研究與資安攻防演練。',i:'honeynet',link:'https://honeynet.org'}
+    {n:'Cloud Security Alliance (CSA) Taiwan Chapter',d:'推廣雲端安全最佳實踐。',i:'csa',link:'https://www.cloudsecurityalliance.org'},
+    {n:'Open Web Application Security Project (OWASP) Taiwan Chapter',d:'推廣應用程式安全知識與教育訓練。',i:'owasp',link:'https://owasp.org/'},
+    {n:'The Honeynet Project Taiwan Chapter',d:'進行蜜罐研究與資安攻防演練。',i:'honeynet',link:'http://honeynet.org/'}
   ],
   edu:[{n:'Hack The Box',d:'資安學習與實戰平台。',i:'hackthebox',link:'https://www.hackthebox.com'}],
   sec:[
-    {n:'Agile HR',d:'推廣敏捷人資理念。',i:'agile-hr'},
-    {n:'AWS User Group Taiwan',d:'AWS 技術應用社群。',i:'aws-ug',fb:'https://facebook.com/awsugtw'},
-    {n:'DevSecOps Taiwan',d:'推動 Dev+Sec+Ops 文化。',i:'devsecops'},
-    {n:'GDG Kaohsiung',d:'Google 技術社群。',i:'gdg-kaohsiung'},
-    {n:'Taiwan Agile Tribe (TAT) 台灣敏捷部落',d:'敏捷開發與實踐分享。',i:'tat'},
-    {n:'TWCSA 台灣數位安全聯盟',d:'資安產學合作與推廣。',i:'twcsa'},
-    {n:'OCF 開放文化基金會',d:'推廣開源與數位人權。',i:'ocf'},
-    {n:'vLAB Online 台灣路由網路實驗中心',d:'推動網路安全教育。',i:'vlab'},
-    {n:'SmartEraNewLife',d:'AI × 資安玩家村。',i:'smartera'},
-    {n:'網通人（專管網路通不通）',d:'專注網路通訊與架構。',i:'netman'}
+    {n:'Agile HR',d:'推廣敏捷人資理念。',i:'agile-hr',link:'https://ifus.tw/agilehr'},
+    {n:'AWS User Group Taiwan',d:'AWS 技術應用社群。',i:'aws-ug',link:'https://aws.amazon.com/tw/events/developer-events/aws-user-group/',fb:'https://www.facebook.com/groups/awsugtw'},
+    {n:'DevSecOps Taiwan',d:'推動 Dev+Sec+Ops 文化。',i:'devsecops',link:'https://www.devsecops.com.tw/'},
+    {n:'GDG Kaohsiung',d:'Google 技術社群。',i:'gdg-kaohsiung',link:'https://gdg.community.dev/gdg-kaohsiung/',fb:'https://www.facebook.com/GDGKaohsiung'},
+    {n:'Taiwan Agile Tribe (TAT) 台灣敏捷部落',d:'敏捷開發與實踐分享。',i:'tat',link:'https://taiwanagiletribe.com',fb:'https://www.facebook.com/groups/taiwanagiletribe'},
+    {n:'TWCSA 台灣數位安全聯盟',d:'資安產學合作與推廣。',i:'twcsa',link:'https://www.twcsa.org/',fb:'https://www.facebook.com/TaiwanCSA'},
+    {n:'OCF 開放文化基金會',d:'推廣開源與數位人權。',i:'ocf',link:'https://ocf.tw/',fb:'https://www.facebook.com/www.ocf.tw'},
+    {n:'vLAB Online 台灣路由網路實驗中心',d:'推動網路安全教育。',i:'vlab',link:'https://hackmd.io/@vLAB/rkVcjSp06',fb:'https://www.facebook.com/vLABonline/',ig:'https://www.instagram.com/vlab_ict',tr:'https://www.threads.com/@vlab_ict',lk:'https://www.linkedin.com/company/vlabtw/'},
+    {n:'智慧時代新生活AI & 資安玩家村',d:'AI × 資安玩家村。',i:'smartera',link:'https://linktr.ee/OpenBlue.Link',fb:'https://www.facebook.com/openblue',ig:'https://www.instagram.com/SmartEraNewLife',tr:'https://www.threads.com/@smarteranewlife'},
+    {n:'網通人（專管網路通不通）',d:'專注網路通訊與架構。',i:'netman',fb:'https://www.facebook.com/groups/472315702799001/?locale=zh_TW'}
   ]
 };
 
@@ -149,8 +149,10 @@ function render(list,id){
     <div class='desc'>${o.d}</div>
     <div class='links'>
       ${o.link ? `<a href="${o.link}" target="_blank" rel="noopener noreferrer">官網</a>` : ''}
-      ${o.fb ? `<a href="${o.fb}" target="_blank" rel="noopener noreferrer">FB</a>` : ''}
-      ${o.ig ? `<a href="${o.ig}" target="_blank" rel="noopener noreferrer">IG</a>` : ''}
+      ${o.fb ? `<a href="${o.fb}" target="_blank" rel="noopener noreferrer">Facebook</a>` : ''}
+      ${o.ig ? `<a href="${o.ig}" target="_blank" rel="noopener noreferrer">Instagram</a>` : ''}
+      ${o.tr ? `<a href="${o.tr}" target="_blank" rel="noopener noreferrer">Threads</a>` : ''}
+      ${o.lk ? `<a href="${o.lk}" target="_blank" rel="noopener noreferrer">Linkedin</a>` : ''}    
     </div>
   </div>`).join('');
 }
